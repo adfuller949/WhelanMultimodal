@@ -11,23 +11,16 @@ library(ggpubr)
 
 # Figure 1F ---------------------------------------------------------------
 
-load('multiome')
+load('full')
 
 # RNA QC
 DefaultAssay(full) <- 'RNA'
-Idents(multiome) <- "orig.ident"
-VlnPlot(object = multiome, features = c('nFeature_RNA','nCount_RNA','percent.mt'),
-        pt.size = 0, group.by = 'orig.ident') + plot_annotation(title = "Multiome without QC applied")
-
-full <- subset(multiome, subset = nFeature_RNA < 4000 & nFeature_RNA > 200)
+full <- subset(full, subset = nFeature_RNA < 4000 & nFeature_RNA > 200)
 full <- subset(full, subset = nCount_RNA < 15000 & nCount_RNA > 500)
 full <- subset(full, subset = percent.mt < 30)
 
 # ATAC QC
 DefaultAssay(full) <- 'ATAC'
-Idents(full) <- 'orig.ident'
-VlnPlot(object = full, features = c('nCount_ATAC','TSS.enrichment','nucleosome_signal'),
-        pt.size = 0)
 full <- subset(full, subset = nCount_ATAC < 50000 & nCount_ATAC > 1000)
 full <- subset(full, subset = TSS.enrichment > 3)
 full <- subset(full, subset = nucleosome_signal < 2)
