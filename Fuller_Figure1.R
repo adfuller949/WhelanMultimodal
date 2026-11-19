@@ -11,7 +11,7 @@ library(ggpubr)
 
 # Figure 1F ---------------------------------------------------------------
 
-load('full')
+full <- readRDS("GSE354601_full.rds")
 
 # RNA QC
 DefaultAssay(full) <- 'RNA'
