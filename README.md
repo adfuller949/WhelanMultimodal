@@ -1,5 +1,5 @@
 # WhelanMultimodal
-This repository contains R scripts used to generate figures for the snRNA/snATAC multimodal analysis of murine esophagus undergoing recurrent allergen challenge and/or carcinogenesis, published by Lab Whelan. Please download the 10X FASTQ files or the processed .h5/.tsv/.tbi files processed by Cell Ranger ARC 2.0.1 from the GEO accession [GSE354601]. Seurat object was generated following Seurat's WNN analysis of 10x Multiome, RNA + ATAC vignette accessible in the satijalab seurat repository (vignettes/weighted_nearest_neighbor_analysis.Rmd).
+This repository contains R scripts used to generate figures for the snRNA/snATAC multimodal analysis of murine esophagus undergoing recurrent allergen challenge and/or carcinogenesis, published by Lab Whelan. Please download the 10X FASTQ files or the processed .h5/.tsv/.tbi files processed by Cell Ranger ARC 2.0.1 from the GEO accession [GSE354601]. Alternatively, please use the Seurat object RDS file (GSE354601_full.rds) located under the same GEO accession number. Seurat object was generated following Seurat's WNN analysis of 10x Multiome, RNA + ATAC vignette accessible in the satijalab seurat repository (vignettes/weighted_nearest_neighbor_analysis.Rmd).
 
 The core dependencies for these scripts:
 
